@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS bamazon;
+
 CREATE DATABASE bamazon;
 
 Use bamazon;
@@ -28,4 +30,4 @@ INSERT INTO products (product_name, department_name, price, stock_quantity) VALU
 ("Hikari Algae Wafers 82g", "Pet Food", 33.99, 12),
 ("Apple iPhone XS Max", "Mobile Phones", 1799, 25);
 
-   SELECT * FROM products
+SELECT * FROM products
