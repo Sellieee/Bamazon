@@ -30,4 +30,5 @@ INSERT INTO products (product_name, department_name, price, stock_quantity) VALU
 ("Hikari Algae Wafers 82g", "Pet Food", 33.99, 12),
 ("Apple iPhone XS Max", "Mobile Phones", 1799, 25);
 
-SELECT * FROM products
+SELECT * FROM products;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'
