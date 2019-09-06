@@ -12,7 +12,7 @@ product_name VARCHAR
    (50) NULL,
 department_name VARCHAR
    (50) NULL,
-price INT NULL,
+price INT NULL DECIMAL(10,2),
 stock_quantity INT NULL,
 PRIMARY KEY
    (item_id)

@@ -39,7 +39,7 @@ function inquirerStart() {
                }
                return arrayChoice;
             },
-            message: "Which item would you like to purchase? (Please select by item number)"
+            message: "Which item would you like to purchase?"
          },
          {
             name: "amount",
@@ -48,16 +48,16 @@ function inquirerStart() {
          }
       ]).then
 
-      function (answer) {
+      (function (answer) {
          var selectedItem;
          for (var i = 0; i < response.length; i++) {
             if (response[i].product_name === answer.selectedItemID) {
                selectedItem = response[i];
             }
          };
-         if (selectedItem.stock_quantity > answer.amount) {
+         if (selectedItem.stock_quantity < answer.amount) {
             connection.query("UPDATE products SET ? WHERE ?", [{
-               stock_quantity: selectedItem.stock_quantity - amount
+               stock_quantity: selectedItem.stock_quantity - answer.amount
             }, {
                item_id: selectedItem.item_id
             }], function (error) {
@@ -66,7 +66,13 @@ function inquirerStart() {
                console.log("---------------------------------");
                inquirerStart();
             })
+            console.log("Your total purchases is: $" + selectedItem.price * answer.amount)
+            console.log("---------------------------------");
+         } else {
+            console.log("Sorry, you've cleared out our shop, please come back later.")
+            console.log("---------------------------------");
+            inquirerStart();
          }
-      }
+      })
    })
 }
