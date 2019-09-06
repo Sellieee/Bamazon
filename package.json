@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "https://sellieee.github.io/Bamazon/ | https://github.com/Sellieee/Bamazon/",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sellieee/Bamazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sellieee/Bamazon/issues"
+  },
+  "homepage": "https://github.com/Sellieee/Bamazon#readme",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
+}
