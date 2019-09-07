@@ -55,7 +55,9 @@ function inquirerStart() {
                selectedItem = response[i];
             }
          };
-         if (selectedItem.stock_quantity < answer.amount) {
+
+         console.log("There are " + selectedItem.stock_quantity + " items remaining.");
+         if (selectedItem.stock_quantity >= parseInt(answer.amount)) {
             connection.query("UPDATE products SET ? WHERE ?", [{
                stock_quantity: selectedItem.stock_quantity - answer.amount
             }, {
